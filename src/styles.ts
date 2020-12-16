@@ -1,11 +1,14 @@
-import styled, { createGlobalStyle, DefaultTheme } from "styled-components";
+import { createGlobalStyle, DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   size_font: "1.6rem",
+  size_border_radius: "3px",
 
   color_background: "#3179ba",
   color_column: "#ebecf0",
-  color_font: "#000000"
+  color_font: "#000000",
+  color_card_bg: "#ffffff",
+  color_button: "#5aac44",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -37,14 +40,4 @@ export const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-`;
-
-export const AppContainer = styled.div`
-  align-items: flex-start;
-  background-color: ${({ theme }) => theme.color_background};
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  padding: 2rem;
-  width: 100%;
 `;
