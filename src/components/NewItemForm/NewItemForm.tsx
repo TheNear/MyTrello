@@ -10,7 +10,8 @@ const NewItemForm: React.FC<NewItemFormProps> = ({ onAdd }) => {
 
   return (
     <NewItemFormContainer>
-      <NewItemInput 
+      <NewItemInput
+        autoFocus
         value={text}
         onChange={e => setText(e.target.value)}
       />
