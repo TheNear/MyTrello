@@ -7,17 +7,13 @@ import { AppContainer } from "./styles/AppStyle";
 
 
 const App: React.FC = () => {
+  const { state } = useAppState();
+
   return (
     <AppContainer>
-      <Column text="Have to Do">
-        <Card text="Buy Milk"/>
-      </Column>
-      <Column text="Completed">
-        <Card text="Learn React"/>
-      </Column>
-      <Column text="In Progress">
-        <Card text="Some..."/>
-      </Column>
+      {state.lists.map((list) => (
+        <Column key={list.id} text={list.text} index={list.id}/>
+      ))}
       <AddNewItem onAdd={console.log} toggleButtonText="+ Add another list" />
     </AppContainer>
   );
