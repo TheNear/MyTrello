@@ -11,9 +11,15 @@ interface AddNewItemProps {
 const AddNewItem: React.FC<AddNewItemProps> = ({ onAdd, toggleButtonText, dark }) => {
   const [showForm, setShowForm] = useState(false);
 
+  const openForm = () => {
+    setShowForm(true);
+  };
+
+
   if (showForm) {
     return (
-      <NewItemForm 
+      <NewItemForm
+      // Поменять это поведение с передачей функции 
         onAdd={(text: string) => {
           onAdd(text);
           setShowForm(false);
@@ -23,7 +29,7 @@ const AddNewItem: React.FC<AddNewItemProps> = ({ onAdd, toggleButtonText, dark }
   }
 
   return (
-    <AddItemButton dark={dark} onClick={() => setShowForm(true)}>
+    <AddItemButton dark={dark} onClick={openForm}>
       {toggleButtonText}
     </AddItemButton>
   );
