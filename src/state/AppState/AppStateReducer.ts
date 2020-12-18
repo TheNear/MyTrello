@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import { swapList } from "../../helpers/swapList";
 import { AppActions, AppActionsTypes, AppState } from "./AppStateTypes";
 
 const initialState: AppState = {
@@ -32,8 +33,14 @@ export const appStateReducer = (state = initialState, action: AppActions): AppSt
       };
       return template;
     }
-    case AppActionsTypes.MOVE_LIST:
-      return state;
+    case AppActionsTypes.MOVE_LIST: {
+      const { dragID, hoverID } = action.payload;
+      const sortedList = swapList([...state.lists], dragID, hoverID);
+      return {
+        ...state,
+        ...sortedList
+      };
+    }
     default:
       return state;
   }

@@ -18,8 +18,8 @@ export interface AppState {
 }
 
 export interface MoveStatus {
-  dragIndex: number,
-  hoverIndex: number,
+  dragID: string,
+  hoverID: string,
 }
 
 export interface AppStateContextProps {

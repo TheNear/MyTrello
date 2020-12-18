@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useAppState } from "../../state/AppState/AppState";
 import { addTask } from "../../state/AppState/AppStateActions";
 import { Task } from "../../state/AppState/AppStateTypes";
