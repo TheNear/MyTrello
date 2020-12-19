@@ -3,17 +3,17 @@ import { AppState } from "./AppStateTypes";
 export const appData: AppState = {
   lists: [
     {
-      id: "0",
+      id: "FCOLUM1",
       text: "To Do",
       tasks: [{ listID: "0", id: "c0", text: "Generate app" }],
     },
     {
-      id: "1",
+      id: "SCOLUM222",
       text: "In Progress",
       tasks: [{ listID: "0", id: "c2", text: "Learn JavaScript" }],
     },
     {
-      id: "2",
+      id: "TCOLUM33333",
       text: "Done",
       tasks: [{ listID: "0", id: "c3", text: "Begin to type" }],
     },

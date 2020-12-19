@@ -1,6 +1,13 @@
 import { InferValueTypes } from "../../types/state";
 import * as actions from "./AppStateActions";
 
+export type ColumnDragItem = {
+  uid: string,
+  type: "COLUMN"
+}
+
+export type DragItem = ColumnDragItem;
+
 export interface Task {
   listID: string,
   id: string,

@@ -14,3 +14,4 @@ export const moveList = (move: MoveStatus) => ({
   type: AppActionsTypes.MOVE_LIST,
   payload: move,
 } as const);
+

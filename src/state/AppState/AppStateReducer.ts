@@ -36,9 +36,10 @@ export const appStateReducer = (state = initialState, action: AppActions): AppSt
     case AppActionsTypes.MOVE_LIST: {
       const { dragID, hoverID } = action.payload;
       const sortedList = swapList([...state.lists], dragID, hoverID);
+      console.log(sortedList);
       return {
         ...state,
-        ...sortedList
+        lists: sortedList,
       };
     }
     default:
