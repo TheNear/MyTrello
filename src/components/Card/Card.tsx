@@ -19,7 +19,6 @@ const Card: React.FC<CardProps> = memo(({ text, uid, listID }) => {
   const [, drop] = useDrop({
     accept: "CARD",
     drop(item: CardDragItem) {
-      console.log("SECOND");
       if (item.uid === uid) return;
       
       const moveMap: MoveTaskStatus = {
