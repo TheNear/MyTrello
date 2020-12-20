@@ -5,17 +5,17 @@ export const appData: AppState = {
     {
       id: "FCOLUM1",
       text: "To Do",
-      tasks: [{ listID: "0", id: "c0", text: "Generate app" }],
+      tasks: [{ listID: "FCOLUM1", id: "c0", text: "Generate app" }],
     },
     {
       id: "SCOLUM222",
       text: "In Progress",
-      tasks: [{ listID: "0", id: "c2", text: "Learn JavaScript" }],
+      tasks: [{ listID: "SCOLUM222", id: "c2", text: "Learn JavaScript" }],
     },
     {
       id: "TCOLUM33333",
       text: "Done",
-      tasks: [{ listID: "0", id: "c3", text: "Begin to type" }],
+      tasks: [{ listID: "TCOLUM33333", id: "c3", text: "Begin to type" }],
     },
   ],
 };

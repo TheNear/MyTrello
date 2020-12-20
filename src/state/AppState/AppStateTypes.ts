@@ -3,10 +3,19 @@ import * as actions from "./AppStateActions";
 
 export type ColumnDragItem = {
   uid: string,
-  type: "COLUMN"
+  type: "COLUMN",
+  text: string,
+  cards: Task[],
 }
 
-export type DragItem = ColumnDragItem;
+export type CardDragItem = {
+  uid: string,
+  type: "CARD",
+  text: string,
+  listID: string,
+}
+
+export type DragItem = ColumnDragItem | CardDragItem;
 
 export interface Task {
   listID: string,
@@ -24,9 +33,16 @@ export interface AppState {
   lists: List[],
 }
 
-export interface MoveStatus {
+export interface MoveListStatus {
   dragID: string,
   hoverID: string,
+}
+
+export interface MoveTaskStatus {
+  dragID: string,
+  hoverID: string | 0,
+  sourceColumn: string,
+  targterColumn: string,
 }
 
 export interface AppStateContextProps {
@@ -38,6 +54,7 @@ export enum AppActionsTypes {
   ADD_LIST = "app/ADD_LIST",
   ADD_TASK = "app/ADD_TASK",
   MOVE_LIST = "app/MOVE_LIST",
+  MOVE_TASK = "app/MOVE_TASK",
 }
 
 export type AppActions = ReturnType<InferValueTypes<typeof actions>>

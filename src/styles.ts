@@ -12,13 +12,14 @@ export const theme: DefaultTheme = {
 };
 
 export const GlobalStyle = createGlobalStyle`
-  html {
+  * {
     box-sizing: border-box;
-    font-size: 62.5%
+    margin: 0;
+    padding: 0;
   }
 
-  *, *:before, *:after {
-    box-sizing: inherit;
+  html {
+    font-size: 62.5%
   }
 
   html, body, #root {

@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { swapList } from "../../helpers/swapList";
+import { swapTask } from "../../helpers/swapTask";
 import { AppActions, AppActionsTypes, AppState } from "./AppStateTypes";
 
 const initialState: AppState = {
@@ -34,9 +35,14 @@ export const appStateReducer = (state = initialState, action: AppActions): AppSt
       return template;
     }
     case AppActionsTypes.MOVE_LIST: {
-      const { dragID, hoverID } = action.payload;
-      const sortedList = swapList([...state.lists], dragID, hoverID);
-      console.log(sortedList);
+      const sortedList = swapList(state.lists, action.payload);
+      return {
+        ...state,
+        lists: sortedList,
+      };
+    }
+    case AppActionsTypes.MOVE_TASK: {
+      const sortedList = swapTask(state.lists, action.payload);
       return {
         ...state,
         lists: sortedList,

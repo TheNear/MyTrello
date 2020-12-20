@@ -1,8 +1,8 @@
-import { List } from "../state/AppState/AppStateTypes";
+import { List, MoveListStatus } from "../state/AppState/AppStateTypes";
 
-export const swapList = (arr: List[], from: string, to: string): List[] => {
-  const fromIndex = arr.findIndex((list) => list.id === from);
-  const toIndex = arr.findIndex((list) => list.id === to);
+export const swapList = (arr: List[], move: MoveListStatus): List[] => {
+  const fromIndex = arr.findIndex((list) => list.id === move.dragID);
+  const toIndex = arr.findIndex((list) => list.id === move.hoverID);
   const splicedItem = arr.splice(fromIndex, 1)[0];
   arr.splice(toIndex, 0, splicedItem);
   return arr;

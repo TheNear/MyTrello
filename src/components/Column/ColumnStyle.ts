@@ -10,7 +10,7 @@ export const ColumnContainer = styled(DragPreviewContaienr)`
   margin-right: 20px;
   min-height: 40px;
   padding: 8px;
-  width: 300px;
+  min-width: 300px;
 `;
 
 export const ColumnTitle = styled.div`

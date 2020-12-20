@@ -1,4 +1,4 @@
-import { AppActionsTypes, MoveStatus } from "./AppStateTypes";
+import { AppActionsTypes, MoveListStatus, MoveTaskStatus } from "./AppStateTypes";
 
 export const addTask = (text: string, listID: string) => ({
   type: AppActionsTypes.ADD_TASK,
@@ -10,8 +10,12 @@ export const addList = (title: string) => ({
   payload: title,
 } as const);
 
-export const moveList = (move: MoveStatus) => ({
+export const moveList = (move: MoveListStatus) => ({
   type: AppActionsTypes.MOVE_LIST,
   payload: move,
 } as const);
 
+export const moveTask = (move: MoveTaskStatus) => ({
+  type: AppActionsTypes.MOVE_TASK,
+  payload: move,
+} as const);
